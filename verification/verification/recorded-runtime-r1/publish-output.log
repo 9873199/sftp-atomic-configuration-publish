@@ -1,0 +1,10 @@
+test_short_reads_and_ack_order (test_acceptance.PublishProtocol.test_short_reads_and_ack_order) ... ok
+test_cancel_write_pending_ack (test_acceptance.PublishProtocol.test_cancel_write_pending_ack) ... ok
+test_cancel_close_pending_ack (test_acceptance.PublishProtocol.test_cancel_close_pending_ack) ... [conn=5, chan=0] Error closing temporary file .asyncssh-publish-cf64e304a4842987 during publish cleanup: Invalid file handle
+ok
+test_response_lost_after_replace (test_acceptance.PublishProtocol.test_response_lost_after_replace) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 6.745s
+
+OK

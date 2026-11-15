@@ -1,0 +1,17 @@
+{
+  "independent_protocol": {
+    "passed": 17,
+    "failed": 0,
+    "command": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\independent-protocol.json"
+  },
+  "model_tests_replayed": {
+    "passed": 12,
+    "failed": 0,
+    "command": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.json"
+  },
+  "invalid_fixture_attempt": {
+    "revision": "protocol-r1",
+    "exit_code": 124,
+    "excluded_from_score": true
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "time": "2026-11-15T10:05:47+08:00",
+  "uid": 1389,
+  "container": false,
+  "actual": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\env\\Scripts\\python.exe",
+    "modules": {
+      "asyncssh": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\replay-source\\asyncssh\\__init__.py",
+      "asyncssh.sftp": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\replay-source\\asyncssh\\sftp.py"
+    }
+  },
+  "dependency_lock": "bcrypt==5.0.0\ncffi==2.1.1\ncolorama==0.4.6\ncryptography==50.0.2\niniconfig==2.3.1\npackaging==26.3\npluggy==1.7.0\npycparser==3.12\nPygments==2.21.0\npyOpenSSL==26.4.0\npytest==9.2.0\ntyping_extensions==4.16.0\n",
+  "dependency_environment": "Reused the task dependency environment; exact pip freeze retained",
+  "frozen_source_import_verified": true,
+  "external_runtime_services": [],
+  "environment_limits": [
+    "Windows原生Python环境，未容器化；依赖需按精确lock安装。",
+    "完整上游SFTP套件本轮未独立重跑；模型报告的Windows符号链接失败未混入本轮17项成绩。"
+  ],
+  "task_preparation": {
+    "time": "2026-11-15T03:51:47+08:00",
+    "status": "ENV_READY",
+    "python": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\env\\Scripts\\python.exe",
+    "source_path": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\old-two-recovery-r2\\source-asyncssh\\src;D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\old-two-recovery-r2\\source-asyncssh",
+    "environment_directory": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\environment-r2",
+    "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\old-two-recovery-r2\\source-asyncssh",
+    "dependencies_lock": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\environment-r2\\dependencies-lock.stdout.log",
+    "external_services": false,
+    "containerized": false,
+    "clean": true,
+    "baseline_evidence": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\old-two-recovery-r2\\baseline-1389.json",
+    "upstream_scope_note": "Install declared typing_extensions; local generated test servers, no preexisting service.",
+    "earlier_attempts_retained": true,
+    "recovery_source_proof": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\sftp-final-recovery-20261115-r1\\source-preparation.json",
+    "fresh_tool_probe": "D:\\hc\\userFeedback\\cache\\probes\\relay-20261115-003807-shell\\summary.json",
+    "preparation_note": "One separately authorized recovery from same unchanged initial commit; old attempts and retry limits retained."
+  }
+}

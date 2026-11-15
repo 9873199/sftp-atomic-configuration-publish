@@ -1,0 +1,234 @@
+{
+  "title": "Configuration publishing",
+  "directory": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\recording-word-timing-r1",
+  "cwd": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2",
+  "capture": "wgc",
+  "environment": {
+    "PYTHONPATH": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\replay-source;D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2",
+    "PYTHONPYCACHEPREFIX": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\recording-word-timing-r1\\bytecode",
+    "TEMP": "D:\\hc\\userFeedback\\cache\\tmp",
+    "TMP": "D:\\hc\\userFeedback\\cache\\tmp"
+  },
+  "commands": [
+    {
+      "id": "publish",
+      "label": "Stream, cancellation and lost-reply checks",
+      "display": "python demo.py",
+      "argv": [
+        "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\env\\Scripts\\python.exe",
+        "demo.py"
+      ],
+      "start_at_seconds": 2,
+      "typing_events": [
+        {
+          "key": "p",
+          "delay_seconds": 0.5413971333887404,
+          "kind": "word_boundary",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "y",
+          "delay_seconds": 0.1420286887492375,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "t",
+          "delay_seconds": 0.16041226055989619,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "g",
+          "delay_seconds": 0.24838393622560478,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "o",
+          "delay_seconds": 0.2561447663136145,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "n",
+          "delay_seconds": 0.2110331468677548,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.6008015366686792,
+          "kind": "word_boundary",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.23673614926215383,
+          "kind": "erase",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.29176576206025295,
+          "kind": "erase",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.13496470841044492,
+          "kind": "erase",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.2890923641171545,
+          "kind": "erase",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "BACKSPACE",
+          "delay_seconds": 0.24859254041754303,
+          "kind": "erase",
+          "phase": "repair_erase",
+          "word_index": 0
+        },
+        {
+          "key": "p",
+          "delay_seconds": 0.6194462428371935,
+          "kind": "word_boundary",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": "y",
+          "delay_seconds": 0.1511075327306894,
+          "kind": "letter",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": "t",
+          "delay_seconds": 0.2637719781462232,
+          "kind": "letter",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": "h",
+          "delay_seconds": 0.24907399233329905,
+          "kind": "letter",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": "o",
+          "delay_seconds": 0.3168582748294429,
+          "kind": "letter",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": "n",
+          "delay_seconds": 0.20972728193508677,
+          "kind": "letter",
+          "phase": "repair_retype",
+          "word_index": 0
+        },
+        {
+          "key": " ",
+          "delay_seconds": 0,
+          "kind": "separator",
+          "phase": "separator",
+          "word_index": 1
+        },
+        {
+          "key": "d",
+          "delay_seconds": 0.5768240542297318,
+          "kind": "word_boundary",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": "e",
+          "delay_seconds": 0.2355531354605419,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": "m",
+          "delay_seconds": 0.30208247633932994,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": "o",
+          "delay_seconds": 0.23532229401992277,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": ".",
+          "delay_seconds": 0.4380289482817395,
+          "kind": "special",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": "p",
+          "delay_seconds": 0.5824979704209348,
+          "kind": "word_boundary",
+          "phase": "initial",
+          "word_index": 1
+        },
+        {
+          "key": "y",
+          "delay_seconds": 0.3128804200858273,
+          "kind": "letter",
+          "phase": "initial",
+          "word_index": 1
+        }
+      ],
+      "repaired_word_indices": [
+        0
+      ],
+      "words": [
+        "python",
+        "demo.py"
+      ]
+    }
+  ],
+  "input_automation": {
+    "mode": "automated console character editor",
+    "source_is_human": false,
+    "timing_policy": "word-special-v2",
+    "within_word_letter_delay_seconds": [
+      0.1,
+      0.5
+    ],
+    "before_special_and_between_words_delay_seconds": [
+      0.4,
+      0.8
+    ],
+    "whole_word_repairs_per_command": [
+      1,
+      3
+    ],
+    "planned_typing_seconds": 7.85452759469104,
+    "command_executes_only_after_exact_buffer_match": true
+  }
+}

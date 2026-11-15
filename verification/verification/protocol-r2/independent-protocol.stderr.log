@@ -1,0 +1,26 @@
+test_cancel_close_pending_ack (__main__.PublishProtocol.test_cancel_close_pending_ack) ... [conn=1, chan=0] Error closing temporary file .asyncssh-publish-9b328dc52d4ced0e during publish cleanup: Invalid file handle
+ok
+test_cancel_write_pending_ack (__main__.PublishProtocol.test_cancel_write_pending_ack) ... ok
+test_cleanup_errors_keep_original (__main__.PublishProtocol.test_cleanup_errors_keep_original) ... [conn=5, chan=0] Error closing temporary file .asyncssh-publish-d8fdbe60db9103ac during publish cleanup: review-close-error
+[conn=5, chan=0] Error removing temporary file .asyncssh-publish-d8fdbe60db9103ac during publish cleanup: review-remove-error
+ok
+test_close_rejected (__main__.PublishProtocol.test_close_rejected) ... [conn=7, chan=0] Error closing temporary file .asyncssh-publish-3d5d37b5b344024e during publish cleanup: Invalid file handle
+ok
+test_collision_preserves_foreign_file (__main__.PublishProtocol.test_collision_preserves_foreign_file) ... ok
+test_delayed_write_rejected (__main__.PublishProtocol.test_delayed_write_rejected) ... ok
+test_empty_stream (__main__.PublishProtocol.test_empty_stream) ... ok
+test_excess_length (__main__.PublishProtocol.test_excess_length) ... ok
+test_extension_unavailable_no_write (__main__.PublishProtocol.test_extension_unavailable_no_write) ... ok
+test_invalid_arguments_no_protocol (__main__.PublishProtocol.test_invalid_arguments_no_protocol) ... ok
+test_rename_rejected (__main__.PublishProtocol.test_rename_rejected) ... ok
+test_response_lost_after_replace (__main__.PublishProtocol.test_response_lost_after_replace) ... ok
+test_response_lost_before_replace (__main__.PublishProtocol.test_response_lost_before_replace) ... ok
+test_short_length (__main__.PublishProtocol.test_short_length) ... ok
+test_short_reads_and_ack_order (__main__.PublishProtocol.test_short_reads_and_ack_order) ... ok
+test_source_error_identity (__main__.PublishProtocol.test_source_error_identity) ... ok
+test_wrong_digest (__main__.PublishProtocol.test_wrong_digest) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 9.489s
+
+OK

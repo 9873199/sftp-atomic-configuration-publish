@@ -1,0 +1,3 @@
+Windows，Python 3.14.3，依赖采用本目录 dependency-lock.stdout.log 的精确版本。未容器化；所有SSH/SFTP对端仅绑定127.0.0.1，密钥当次在内存生成，不依赖外部SSH服务。
+冻结源码在仓库根；设置PYTHONPATH为仓库根后运行 python verification/verification/protocol-r2/test_acceptance.py。模型自带用例：python -m unittest tests.test_sftp_publish。独立协议17项通过；模型自带12项复跑通过，分开记录。没有独立重跑完整SFTP套件，不能将模型报告的497/16当本轮独立验收成绩。
+protocol-r1的180秒超时来自夹具先等待客户端清理、再释放服务端close回应的循环等待；r2独立释放回应后验证取消和清理，冻结产物从未修改。清理期间Invalid file handle警告按真实输出保留；原取消原因仍传播，临时文件删除成功。

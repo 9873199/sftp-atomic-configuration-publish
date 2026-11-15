@@ -1,0 +1,29 @@
+全部完成。所有超长行都是已有代码，我新增的行都在 79 列以内；12 个新测试全部通过，完整 SFTP 套件 497 通过、16 个失败均为基线上就存在的 Windows 符号链接权限问题，与本次改动无关。
+
+## 改动总结
+
+### `asyncssh/sftp.py` — 新增 `SFTPClient.publish()`
+
+```python
+await sftp.publish(source, remotepath, size, sha256, *, block_size=16384)
+```
+
+- **流式读取**:`source` 只需提供 `await read(n)`；内部循环容忍短读，攒满一个块再写，内存占用严格随 `block_size` 走，不要求 seek、不整份缓冲。
+- **独占临时名**：在目标所在目录生成 `.asyncssh-publish-<16位随机hex>`，以 `FXF_WRITE|FXF_CREAT|FXF_EXCL`（即 `'xb'`）独占创建；撞名（`SFTPFileAlreadyExists`，SFTPv3 下退化为 `SFTPFailure`，已分别处理）就重新取名，最多 100 次，绝不覆盖或清理碰巧同名的他人文件。
+- **确认后才替换**：所有 write 与 close 都收到成功回应、且长度与 SHA-256（支持 bytes 或 hex str）都相符后，才发出 `posix-rename@openssh.com` 扩展请求；会话未协商到该扩展时一开始就抛 `SFTPOpUnsupported`，一个字节都不会写。正式文件绝不被先删后改。
+- **取消是完整失败路径**：写入/关闭期间被取消（或任何异常），尽力 close + remove 本次临时文件后原样重抛原异常；清理出错会记日志并通过 `add_note`（3.11+）挂到原异常上，绝不遮蔽它。
+- **发布状态未知**：rename 请求发出后连接断开（覆盖 `SFTPNoConnection`/`SFTPConnectionLost`/`DisconnectError`/`OSError` 等传输层表现），抛新的 `SFTPPublishUnknown`，不重试替换、不删临时文件、更不动可能已经换好的正式文件；只有服务器确认 FX_OK 才正常返回。
+
+另加了 `SFTPClient.supports_posix_rename` / `SFTPClientHandler.supports_posix_rename` 属性；`SFTPPublishUnknown` 已从 `asyncssh/__init__.py` 导出并登记进 `docs/api.rst`。普通 `put` 路径未动。
+
+### `tests/test_sftp_publish.py` — 12 个测试
+
+每个测试自建仅绑定 `127.0.0.1` 的临时 AsyncSSH/SFTP 对端，密钥用 `generate_private_key('ssh-ed25519')` 本次生成，客户端显式 `known_hosts=None, config=[], agent_path=None`，不碰机器上已有的 SSH 服务和个人密钥/known_hosts;`asyncTearDown` 里 `close()` + `wait_closed()` 收干净 listener。服务器端记录真实协议请求（open/write/close/remove/posix_rename）并可注入故障，覆盖：
+
+- 正常发布（含短读流、覆盖旧文件、新建文件、空流、bytes/hex 两种摘要形式），校验远端内容、临时文件无残留、rename 来源是同目录临时名、正式文件从未被 remove;
+- 长度偏短/超长、摘要不符 → `SFTPFailure`，临时文件清理、旧内容保留；
+- 写入中途取消 → `CancelledError` 原样传播且 `task.cancelled()`，临时文件被清理；
+- 延迟写失败、close 失败 → 清理后原样抛错；
+- 扩展不支持（patch 掉 `SFTPServerHandler._extensions` 中的 posix-rename)→ `SFTPOpUnsupported`，服务器零请求；
+- 同名碰撞（patch 临时名生成）→ 重新取名成功，"他人文件"内容原样保留；
+- 发布回应丢失（服务器 rename 后 `connection.abort()`)→ `SFTPPublishUnknown`，远端已是新内容，客户端未重试 rename、未删任何文件。

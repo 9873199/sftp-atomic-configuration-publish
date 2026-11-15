@@ -1,0 +1,6 @@
+..[conn=5, chan=0] Error closing temporary file /.asyncssh-publish-cebccf0ddd2e61b4 during publish cleanup: Invalid file handle
+..........
+----------------------------------------------------------------------
+Ran 12 tests in 1.121s
+
+OK

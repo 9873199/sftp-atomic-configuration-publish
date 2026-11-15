@@ -1,0 +1,77 @@
+{
+  "process": {
+    "native_trace_lines": [
+      161,
+      191,
+      201,
+      210,
+      249,
+      292,
+      299,
+      306,
+      382,
+      387,
+      397
+    ],
+    "observable_action_index": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\observable-action-index.json",
+    "private_reasoning_used": false
+  },
+  "requirements": [
+    {
+      "requirement": "有界短读和无需seek",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "独占临时文件与同目录原子替换",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "write和close确认后发布",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "长度和SHA256匹配",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "写入和关闭等待期间取消及原原因保留",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "临时名碰撞不误删",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "cleanup失败可查且不遮原错",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "无扩展不写入",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "rename前后掉线均状态未知且不重试",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    },
+    {
+      "requirement": "真实回环对端与当次密钥及资源释放",
+      "status": "PASS",
+      "evidence": "verification/protocol-r2/test_acceptance.py; independent-protocol.stderr.log; asyncssh/sftp.py:4456-4663"
+    }
+  ],
+  "fixture_revision": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\acceptance-1389-fixture-revision.json",
+  "time": "2026-11-15T10:05:47+08:00",
+  "uid": 1389,
+  "frozen_commit": "4653a0c3d94a201121fec1046e10d4d59776a7f3",
+  "native_trace_sha256": "0ee8ccfda3e57a697db4f4d4e13233fc8a201f7baaee0720a65b8c0e5553f14f",
+  "no_model_source_changes_after_freeze": true
+}

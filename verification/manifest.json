@@ -1,0 +1,238 @@
+{
+  "created": "2026-11-15T10:05:47+08:00",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer",
+  "uid": 1389,
+  "frozen_commit": "4653a0c3d94a201121fec1046e10d4d59776a7f3",
+  "native_trajectory_sha256": "0ee8ccfda3e57a697db4f4d4e13233fc8a201f7baaee0720a65b8c0e5553f14f",
+  "files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\freeze.json",
+      "path": "freeze.json",
+      "sha256": "74d78bc490a9713b3c3afdf2393c3e4bfd1470eaedd3a502760fb3d1a1aaf878"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\freeze-audit.json",
+      "path": "freeze-audit.json",
+      "sha256": "2731c023c12c194f7a9fa87e7edceb7b838c358b292926281914d1722dfdf9e8"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\environment-reviewed.json",
+      "path": "environment-reviewed.json",
+      "sha256": "26f93ad99379edaacf5f522804fbe16907ebcaf36d00fb71bbf6f79454ddd62f"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\evidence-map.json",
+      "path": "evidence-map.json",
+      "sha256": "e23a87a8f03b6105010a0cc1b4b49edeb6a4841d7f69e71d95ad7cb7599bba23"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\model-final-answer.txt",
+      "path": "model-final-answer.txt",
+      "sha256": "6113add4225751c71e87453a0ec4e88a27abd7907b63f103e468f2ef8b9757ed"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\test-results.json",
+      "path": "test-results.json",
+      "sha256": "6fcb2631b0a88679a75e59e121f71d31f0981b05101bf0bccbb5dec9b6a20b2d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\evaluation-qc.json",
+      "path": "evaluation-qc.json",
+      "sha256": "a2d3d9caae2ed61db6f69bc8732abf358c37de8f8542f2e9a951b6cc3c718964"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\actual-import.json",
+      "path": "verification/protocol-r1/actual-import.json",
+      "sha256": "0acba11a7c7f4f5e05125a9866e4482a51a3aaa3653046edd70d558b49310032"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\actual-import.stderr.log",
+      "path": "verification/protocol-r1/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\actual-import.stdout.log",
+      "path": "verification/protocol-r1/actual-import.stdout.log",
+      "sha256": "05255e62166c204029c81fc890bc8d54d46694f548e47a0a449bf3c00924128a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\dependency-lock.json",
+      "path": "verification/protocol-r1/dependency-lock.json",
+      "sha256": "ba3ca7c473d61b790b44d1106280b8ec60f0fd3a902e3bc2cdde74c5e66eee8b"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\dependency-lock.stderr.log",
+      "path": "verification/protocol-r1/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\dependency-lock.stdout.log",
+      "path": "verification/protocol-r1/dependency-lock.stdout.log",
+      "sha256": "285d91420252c6682491902a4d4e54f696fd191ef62da15bd7ae91be380c75fd"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\independent-protocol.json",
+      "path": "verification/protocol-r1/independent-protocol.json",
+      "sha256": "3cbacdd34ee13d8f605d4cb5730ecf64b9f902b56aa563645e86b04e00c89044"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\independent-protocol.stderr.log",
+      "path": "verification/protocol-r1/independent-protocol.stderr.log",
+      "sha256": "dda2a15c7434e6ba6ff95284737eadc89278c049c3cf8d987e518f5da11ae666"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\independent-protocol.stdout.log",
+      "path": "verification/protocol-r1/independent-protocol.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\model-tests-replay.json",
+      "path": "verification/protocol-r1/model-tests-replay.json",
+      "sha256": "c4ce0b5d6e37cb2d952ecbcebf75ed89a55a0d240bc1c0c0994f692771f3ebea"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\model-tests-replay.stderr.log",
+      "path": "verification/protocol-r1/model-tests-replay.stderr.log",
+      "sha256": "15d8f0818d49cca6c1c8ccb83d967e80c8b0acf3d0b69bf4fc0b9209a52934a1"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\model-tests-replay.stdout.log",
+      "path": "verification/protocol-r1/model-tests-replay.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\replay-proof.json",
+      "path": "verification/protocol-r1/replay-proof.json",
+      "sha256": "1615abdb04a2f8d1aa0345014b8a649eaefbbc8a3a04ac12ff8d5443d6afd740"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\reviewed-spec.json",
+      "path": "verification/protocol-r1/reviewed-spec.json",
+      "sha256": "9852c0e35b0356190f92660645f6cf18f3f5c9ade34134d6d28c88381dc4261d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\test_acceptance.py",
+      "path": "verification/protocol-r1/test_acceptance.py",
+      "sha256": "afe78b2ada299f501727dc09a57e2d9e6ad5d85b6fdea33ae2d42865d095afee"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\actual-import.json",
+      "path": "verification/protocol-r2/actual-import.json",
+      "sha256": "bd93037d6a7335eb28aaf2326d55fd1de941c698eb10a23edf3c2a900526b76a"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\actual-import.stderr.log",
+      "path": "verification/protocol-r2/actual-import.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\actual-import.stdout.log",
+      "path": "verification/protocol-r2/actual-import.stdout.log",
+      "sha256": "721c27c4f40d86e5a71ce4a6272d76edc99947d30b848eed694a5c89b727e3cf"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\demo.py",
+      "path": "verification/protocol-r2/demo.py",
+      "sha256": "f48a61ed21448b225482117ed5c25969dad0ee89e47d9082a8b492ca3b19e8c4"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\dependency-lock.json",
+      "path": "verification/protocol-r2/dependency-lock.json",
+      "sha256": "1720c9b0b13bee7879d8acacc1af58a2c826069160c4b3a1980955086b89cce0"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\dependency-lock.stderr.log",
+      "path": "verification/protocol-r2/dependency-lock.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\dependency-lock.stdout.log",
+      "path": "verification/protocol-r2/dependency-lock.stdout.log",
+      "sha256": "285d91420252c6682491902a4d4e54f696fd191ef62da15bd7ae91be380c75fd"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\independent-protocol.json",
+      "path": "verification/protocol-r2/independent-protocol.json",
+      "sha256": "8bc6dbeea574a55c65db30d810356d553ea85cca73a8b27b9b874b99256eacb9"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\independent-protocol.stderr.log",
+      "path": "verification/protocol-r2/independent-protocol.stderr.log",
+      "sha256": "dfe86de03c90f0bdf324fcd9ded2c8b72ed15aba8975e97f199c618a757f975c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\independent-protocol.stdout.log",
+      "path": "verification/protocol-r2/independent-protocol.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.json",
+      "path": "verification/protocol-r2/model-tests-replay.json",
+      "sha256": "ffe893a573cd4f7d08ed3fe8ebf74f0aee7d14297aed27d92cf160999d45c253"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.stderr.log",
+      "path": "verification/protocol-r2/model-tests-replay.stderr.log",
+      "sha256": "e452f2bf390d00d0e488958327f907be33198e4ce46f9ef19c751b1f748f772d"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.stdout.log",
+      "path": "verification/protocol-r2/model-tests-replay.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\replay-proof.json",
+      "path": "verification/protocol-r2/replay-proof.json",
+      "sha256": "0bc311dc9a497edb31f7508700c97c73ad884d653572a9f3300d2d15eede4418"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\reproduction-notes.md",
+      "path": "verification/protocol-r2/reproduction-notes.md",
+      "sha256": "62fb3b957757e8ad7e62ef5e7d1e07fc44381253ff4a7dfc86f94960e033c139"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\reviewed-spec.json",
+      "path": "verification/protocol-r2/reviewed-spec.json",
+      "sha256": "d40517445dfceba08a46043be13e5d7d9254e9cf2b0460034a8718ed128e7cba"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\test_acceptance.py",
+      "path": "verification/protocol-r2/test_acceptance.py",
+      "sha256": "db6d751183bbf192a9b97fa73be7a690344d78bc142bca540d4c2dd360d14c98"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\actual-commands.json",
+      "path": "verification/recorded-runtime-r1/actual-commands.json",
+      "sha256": "973f2081acf89a66721f9bdb1b966d95006e189efe9e64bfdc660d22f78246c4"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\actual-keystrokes.json",
+      "path": "verification/recorded-runtime-r1/actual-keystrokes.json",
+      "sha256": "a2a6ea610ec1864879e162ccee7e28fd6fe3e7bcca3835534f6d4fc5ff4f2db0"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\publish-output.log",
+      "path": "verification/recorded-runtime-r1/publish-output.log",
+      "sha256": "82584ac3b621a15c4ca390e840f4e8bbed754a5cd8a780dba8cbc3497fdb45f5"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\recording-status.json",
+      "path": "verification/recorded-runtime-r1/recording-status.json",
+      "sha256": "08e84020044672b241f7c46a759dbc4a6e737cc71b1ef6b399c670193c7ffa7c"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\spec.json",
+      "path": "verification/recorded-runtime-r1/spec.json",
+      "sha256": "a7e1f1293a9e099df0a306e1b901d04203b99004550c4f87c7f55005caa7ab80"
+    },
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\recorded-runtime-r1\\typing-check.json",
+      "path": "verification/recorded-runtime-r1/typing-check.json",
+      "sha256": "536450c3c3c432d8bc52cbb2f64110d8dff3d2846d078b77123250f71b767928"
+    }
+  ],
+  "reproduction_readme": "UID1389 独立复现资料。Windows，Python 3.14.3，依赖采用本目录 dependency-lock.stdout.log 的精确版本。未容器化；所有SSH/SFTP对端仅绑定127.0.0.1，密钥当次在内存生成，不依赖外部SSH服务。\n冻结源码在仓库根；设置PYTHONPATH为仓库根后运行 python verification/verification/protocol-r2/test_acceptance.py。模型自带用例：python -m unittest tests.test_sftp_publish。独立协议17项通过；模型自带12项复跑通过，分开记录。没有独立重跑完整SFTP套件，不能将模型报告的497/16当本轮独立验收成绩。\nprotocol-r1的180秒超时来自夹具先等待客户端清理、再释放服务端close回应的循环等待；r2独立释放回应后验证取消和清理，冻结产物从未修改。清理期间Invalid file handle警告按真实输出保留；原取消原因仍传播，临时文件删除成功。",
+  "no_model_source_edits": true,
+  "native_trace_included": false
+}

@@ -1,0 +1,14 @@
+{
+  "time": "2026-11-15T10:00:16+08:00",
+  "argv": [
+    "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\env\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "tests.test_sftp_publish"
+  ],
+  "cwd": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\replay-source",
+  "exit_code": 0,
+  "stdout_log": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.stdout.log",
+  "stderr_log": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r2\\model-tests-replay.stderr.log"
+}

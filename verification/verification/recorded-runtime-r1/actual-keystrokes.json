@@ -1,0 +1,291 @@
+{
+  "source_is_human": false,
+  "events": [
+    {
+      "command_id": "publish",
+      "event": 0,
+      "key": "p",
+      "requested_delay_seconds": 0.5413971333887404,
+      "actual_at_seconds": 2.547103,
+      "buffer": "p",
+      "kind": "word_boundary",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 1,
+      "key": "y",
+      "requested_delay_seconds": 0.1420286887492375,
+      "actual_at_seconds": 2.689742,
+      "buffer": "py",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 2,
+      "key": "t",
+      "requested_delay_seconds": 0.16041226055989619,
+      "actual_at_seconds": 2.85048,
+      "buffer": "pyt",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 3,
+      "key": "g",
+      "requested_delay_seconds": 0.24838393622560478,
+      "actual_at_seconds": 3.101228,
+      "buffer": "pytg",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 4,
+      "key": "o",
+      "requested_delay_seconds": 0.2561447663136145,
+      "actual_at_seconds": 3.358216,
+      "buffer": "pytgo",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 5,
+      "key": "n",
+      "requested_delay_seconds": 0.2110331468677548,
+      "actual_at_seconds": 3.569693,
+      "buffer": "pytgon",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 6,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.6008015366686792,
+      "actual_at_seconds": 4.17245,
+      "buffer": "pytgo",
+      "kind": "word_boundary",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 7,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.23673614926215383,
+      "actual_at_seconds": 4.40989,
+      "buffer": "pytg",
+      "kind": "erase",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 8,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.29176576206025295,
+      "actual_at_seconds": 4.702302,
+      "buffer": "pyt",
+      "kind": "erase",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 9,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.13496470841044492,
+      "actual_at_seconds": 4.839258,
+      "buffer": "py",
+      "kind": "erase",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 10,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.2890923641171545,
+      "actual_at_seconds": 5.128984,
+      "buffer": "p",
+      "kind": "erase",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 11,
+      "key": "BACKSPACE",
+      "requested_delay_seconds": 0.24859254041754303,
+      "actual_at_seconds": 5.378328,
+      "buffer": "",
+      "kind": "erase",
+      "phase": "repair_erase",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 12,
+      "key": "p",
+      "requested_delay_seconds": 0.6194462428371935,
+      "actual_at_seconds": 5.998495,
+      "buffer": "p",
+      "kind": "word_boundary",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 13,
+      "key": "y",
+      "requested_delay_seconds": 0.1511075327306894,
+      "actual_at_seconds": 6.150427,
+      "buffer": "py",
+      "kind": "letter",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 14,
+      "key": "t",
+      "requested_delay_seconds": 0.2637719781462232,
+      "actual_at_seconds": 6.4147,
+      "buffer": "pyt",
+      "kind": "letter",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 15,
+      "key": "h",
+      "requested_delay_seconds": 0.24907399233329905,
+      "actual_at_seconds": 6.665829,
+      "buffer": "pyth",
+      "kind": "letter",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 16,
+      "key": "o",
+      "requested_delay_seconds": 0.3168582748294429,
+      "actual_at_seconds": 6.983189,
+      "buffer": "pytho",
+      "kind": "letter",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 17,
+      "key": "n",
+      "requested_delay_seconds": 0.20972728193508677,
+      "actual_at_seconds": 7.193552,
+      "buffer": "python",
+      "kind": "letter",
+      "phase": "repair_retype",
+      "word_index": 0
+    },
+    {
+      "command_id": "publish",
+      "event": 18,
+      "key": " ",
+      "requested_delay_seconds": 0,
+      "actual_at_seconds": 7.193719,
+      "buffer": "python ",
+      "kind": "separator",
+      "phase": "separator",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 19,
+      "key": "d",
+      "requested_delay_seconds": 0.5768240542297318,
+      "actual_at_seconds": 7.770813,
+      "buffer": "python d",
+      "kind": "word_boundary",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 20,
+      "key": "e",
+      "requested_delay_seconds": 0.2355531354605419,
+      "actual_at_seconds": 8.006727,
+      "buffer": "python de",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 21,
+      "key": "m",
+      "requested_delay_seconds": 0.30208247633932994,
+      "actual_at_seconds": 8.30949,
+      "buffer": "python dem",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 22,
+      "key": "o",
+      "requested_delay_seconds": 0.23532229401992277,
+      "actual_at_seconds": 8.545083,
+      "buffer": "python demo",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 23,
+      "key": ".",
+      "requested_delay_seconds": 0.4380289482817395,
+      "actual_at_seconds": 8.983599,
+      "buffer": "python demo.",
+      "kind": "special",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 24,
+      "key": "p",
+      "requested_delay_seconds": 0.5824979704209348,
+      "actual_at_seconds": 9.56673,
+      "buffer": "python demo.p",
+      "kind": "word_boundary",
+      "phase": "initial",
+      "word_index": 1
+    },
+    {
+      "command_id": "publish",
+      "event": 25,
+      "key": "y",
+      "requested_delay_seconds": 0.3128804200858273,
+      "actual_at_seconds": 9.890041,
+      "buffer": "python demo.py",
+      "kind": "letter",
+      "phase": "initial",
+      "word_index": 1
+    }
+  ]
+}

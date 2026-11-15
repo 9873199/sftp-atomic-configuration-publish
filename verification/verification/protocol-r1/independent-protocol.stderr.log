@@ -1,0 +1,1 @@
+test_cancel_close_pending_ack (__main__.PublishProtocol.test_cancel_close_pending_ack) ... [conn=1, chan=0] Error closing temporary file .asyncssh-publish-42db78ba892734c3 during publish cleanup: 

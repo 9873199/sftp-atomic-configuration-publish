@@ -1,0 +1,30 @@
+{
+  "video": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\recording-word-timing-r1\\product-run-75s.mp4",
+  "sha256": "76d24926b5b617d1574adcd6fb69f6fac6bdc7f79954c27f4cab39c9b3051701",
+  "capture_exit_code": 0,
+  "continuous": true,
+  "nominal_seconds": 75,
+  "source": "Fresh actual console process executing frozen-product commands",
+  "helper_is_separate_verification_tool": true,
+  "content_qa": "PENDING",
+  "input_automation": {
+    "mode": "automated console character editor",
+    "source_is_human": false,
+    "timing_policy": "word-special-v2",
+    "within_word_letter_delay_seconds": [
+      0.1,
+      0.5
+    ],
+    "before_special_and_between_words_delay_seconds": [
+      0.4,
+      0.8
+    ],
+    "whole_word_repairs_per_command": [
+      1,
+      3
+    ],
+    "planned_typing_seconds": 7.85452759469104,
+    "command_executes_only_after_exact_buffer_match": true
+  },
+  "keystroke_log": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\recording-word-timing-r1\\actual-keystrokes.jsonl"
+}

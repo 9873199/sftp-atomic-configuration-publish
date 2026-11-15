@@ -1,0 +1,41 @@
+{
+  "uid": 1389,
+  "run_id": "uf-20261115-authorized-recovery-asyncssh-1",
+  "reviewed": true,
+  "reviewer": "Codex primary reviewer",
+  "frozen_trace_sha256": "0ee8ccfda3e57a697db4f4d4e13233fc8a201f7baaee0720a65b8c0e5553f14f",
+  "revision": "protocol-r2",
+  "product_modules": [
+    "asyncssh",
+    "asyncssh.sftp"
+  ],
+  "support_files": [
+    {
+      "source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\acceptance-1389-r2.py",
+      "path": "test_acceptance.py",
+      "sha256": "db6d751183bbf192a9b97fa73be7a690344d78bc142bca540d4c2dd360d14c98"
+    }
+  ],
+  "commands": [
+    {
+      "name": "independent-protocol",
+      "argv": [
+        "{python}",
+        "-B",
+        "{verification}/test_acceptance.py"
+      ],
+      "timeout": 180
+    },
+    {
+      "name": "model-tests-replay",
+      "argv": [
+        "{python}",
+        "-B",
+        "-m",
+        "unittest",
+        "tests.test_sftp_publish"
+      ],
+      "timeout": 180
+    }
+  ]
+}

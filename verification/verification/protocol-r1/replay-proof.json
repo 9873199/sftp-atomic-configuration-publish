@@ -1,0 +1,29 @@
+{
+  "time": "2026-11-15T09:58:46+08:00",
+  "uid": 1389,
+  "run_id": "uf-20261115-authorized-recovery-asyncssh-1",
+  "actual": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "D:\\hc\\userFeedback\\cache\\security-ten-20261114-r1\\tasks\\asyncssh\\env\\Scripts\\python.exe",
+    "modules": {
+      "asyncssh": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\replay-source\\asyncssh\\__init__.py",
+      "asyncssh.sftp": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\replay-source\\asyncssh\\sftp.py"
+    }
+  },
+  "replay_source": "D:\\hc\\userFeedback\\cache\\repairs-and-new12-20261115-r1\\evaluation\\uf-20261115-authorized-recovery-asyncssh-1\\verification\\protocol-r1\\replay-source",
+  "frozen_hashes_unchanged": true,
+  "replay_source_hashes_unchanged": true,
+  "dependency_environment": "Reused the task dependency environment; exact pip freeze retained",
+  "commands": [
+    {
+      "name": "independent-protocol",
+      "exit_code": 124
+    },
+    {
+      "name": "model-tests-replay",
+      "exit_code": 0
+    }
+  ],
+  "score": null,
+  "semantic_review": "PENDING"
+}
