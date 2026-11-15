@@ -1084,6 +1084,7 @@ SFTP Support
    =========================== =
    .. automethod:: get
    .. automethod:: put
+   .. automethod:: publish
    .. automethod:: copy
    .. automethod:: mget
    .. automethod:: mput
@@ -2041,6 +2042,7 @@ Exceptions
 .. autoexception:: SFTPNoConnection
 .. autoexception:: SFTPConnectionLost
 .. autoexception:: SFTPOpUnsupported
+.. autoexception:: SFTPPublishUnknown
 .. autoexception:: SFTPInvalidHandle
 .. autoexception:: SFTPNoSuchPath
 .. autoexception:: SFTPFileAlreadyExists

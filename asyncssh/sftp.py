@@ -25,11 +25,13 @@
 import asyncio
 import errno
 from fnmatch import fnmatch
+import hashlib
 import inspect
 import os
 from os import SEEK_SET, SEEK_CUR, SEEK_END
 from pathlib import PurePath
 import posixpath
+import secrets
 import stat
 import sys
 import time
@@ -106,7 +108,7 @@ from .constants import FILEXFER_TYPE_FIFO
 from .logging import SSHLogger
 
 from .misc import BytesOrStr, Error, FilePath, MaybeAwait, OptExcInfo, Record
-from .misc import ConnectionLost
+from .misc import ConnectionLost, DisconnectError
 from .misc import async_context_manager, get_symbol_names, hide_empty
 from .misc import make_sparse_file, plural
 
@@ -183,6 +185,9 @@ MAX_SFTP_PACKET_LEN = MAX_SFTP_WRITE_LEN + 1024
 
 _COPY_DATA_BLOCK_SIZE = 256*1024                    # 256 KiB
 
+_PUBLISH_TEMP_PREFIX = b'.asyncssh-publish-'
+_MAX_PUBLISH_OPEN_ATTEMPTS = 100
+
 _MAX_SFTP_REQUESTS = 128
 _MAX_READDIR_NAMES = 128
 _MAX_SPARSE_RANGES = 128
@@ -255,6 +260,48 @@ class SFTPFileProtocol(Protocol):
 
     async def close(self) -> None:
         """Close the local file"""
+
+
+class _SFTPPublishSource(Protocol):
+    """Protocol for a byte stream which can be atomically published"""
+
+    async def read(self, size: int) -> bytes:
+        """Read up to size bytes, returning an empty result at EOF"""
+
+
+def _publish_temp_name() -> bytes:
+    """Return a random temporary name to use when publishing a file"""
+
+    return _PUBLISH_TEMP_PREFIX + secrets.token_hex(8).encode('ascii')
+
+
+async def _read_publish_block(source: _SFTPPublishSource,
+                              size: int) -> bytes:
+    """Read a block of publish data, tolerating short reads"""
+
+    blocks = []
+    remaining = size
+
+    while remaining:
+        block = await source.read(remaining)
+
+        if not block:
+            break
+
+        blocks.append(block)
+        remaining -= len(block)
+
+    return b''.join(blocks)
+
+
+def _note_cleanup_error(exc: BaseException, cleanup_exc: BaseException) -> \
+        None:
+    """Record a publish cleanup error on the original exception"""
+
+    add_note = getattr(exc, 'add_note', None) # Python 3.11 and later
+
+    if add_note is not None:
+        add_note(f'Error during publish cleanup: {cleanup_exc}')
 
 
 class _SFTPFSProtocol(Protocol):
@@ -1143,6 +1190,29 @@ class SFTPConnectionLost(SFTPError):
 
        This exception is raised when the SSH connection is lost or
        closed while making an SFTP request.
+
+       :param reason:
+           Details about the connection failure
+       :param lang: (optional)
+           The language the reason is in
+       :type reason: `str`
+       :type lang: `str`
+
+    """
+
+    def __init__(self, reason: str, lang: str = DEFAULT_LANG):
+        super().__init__(FX_CONNECTION_LOST, reason, lang)
+
+
+class SFTPPublishUnknown(SFTPError):
+    """SFTP publish status unknown
+
+       This exception is raised by :meth:`SFTPClient.publish` when the
+       connection is lost after the request to replace the target file
+       was sent but before the server's response was received, leaving
+       the final state of the target file unknown. Callers must not
+       assume the publish failed and retry it blindly, as the target
+       file may have already been replaced.
 
        :param reason:
            Details about the connection failure
@@ -2647,6 +2717,12 @@ class SFTPClientHandler(SFTPHandler):
 
         return self._supports_copy_data
 
+    @property
+    def supports_posix_rename(self) -> bool:
+        """Return whether or not POSIX rename is supported"""
+
+        return self._supports_posix_rename
+
     async def _cleanup(self, exc: Optional[Exception]) -> None:
         """Clean up this SFTP client session"""
 
@@ -3890,6 +3966,12 @@ class SFTPClient:
 
         return self._handler.supports_copy_data
 
+    @property
+    def supports_posix_rename(self) -> bool:
+        """Return whether or not POSIX rename is supported"""
+
+        return self._handler.supports_posix_rename
+
     @staticmethod
     def basename(path: bytes) -> bytes:
         """Return the final component of a POSIX-style path"""
@@ -4370,6 +4452,215 @@ class SFTPClient:
                                False, preserve, recurse, follow_symlinks,
                                sparse, block_size, max_requests,
                                progress_handler, error_handler)
+
+    async def _cleanup_publish(self, file: Optional[SFTPClientFile],
+                               tmpname: bytes, exc: BaseException) -> None:
+        """Clean up after a failed publish
+
+           This method makes a best-effort attempt to close and remove
+           the temporary file created by :meth:`publish`. Errors which
+           occur here are logged and attached as notes to the original
+           exception, but never replace it.
+
+        """
+
+        if file is not None:
+            try:
+                await file.close()
+            except BaseException as cleanup_exc: # don't mask original error
+                self.logger.warning('Error closing temporary file %s '
+                                    'during publish cleanup: %s',
+                                    tmpname, str(cleanup_exc))
+                _note_cleanup_error(exc, cleanup_exc)
+
+        try:
+            await self._handler.remove(tmpname)
+        except SFTPNoSuchFile:
+            pass # The temporary file is already gone
+        except BaseException as cleanup_exc: # don't mask original error
+            self.logger.warning('Error removing temporary file %s '
+                                'during publish cleanup: %s',
+                                tmpname, str(cleanup_exc))
+            _note_cleanup_error(exc, cleanup_exc)
+
+    async def publish(self, source: _SFTPPublishSource,
+                      remotepath: _SFTPPath, size: int,
+                      sha256: Union[bytes, str], *,
+                      block_size: int = SAFE_SFTP_WRITE_LEN) -> None:
+        """Atomically publish a byte stream to a remote file
+
+           This method uploads the contents of a byte stream to a
+           remote file in a way which guarantees that other processes
+           reading the file only ever see either the complete previous
+           contents or the complete new contents, never a partial
+           result.
+
+           The data is first written to a uniquely named temporary
+           file created with exclusive access in the same directory as
+           the target. Only after all writes and the close of the
+           temporary file have been confirmed by the server and the
+           received length and SHA-256 digest match the expected values
+           is the target file replaced, using the OpenSSH
+           "posix-rename" extension so the replacement is atomic. The
+           target file is never removed prior to the rename. If the
+           server doesn't support this extension,
+           :exc:`SFTPOpUnsupported` is raised before any data is sent.
+
+           The source only needs to provide an async ``read(size)``
+           method returning up to ``size`` bytes, with an empty result
+           indicating end of stream. Short reads are tolerated, the
+           stream is never required to seek, and memory usage is
+           bounded by the selected block size.
+
+           If the upload fails, is cancelled, or the length or digest
+           doesn't match, a best-effort attempt is made to close and
+           remove the temporary file before the original exception is
+           re-raised. Errors during this cleanup are logged and
+           attached as notes to the original exception, but never
+           replace it. Only the temporary file created by this call is
+           ever removed; a pre-existing file which happens to have a
+           colliding name is left untouched, and a new name is chosen
+           instead.
+
+           If the connection is lost after the rename request has been
+           sent but before the server's response arrives, the final
+           state of the target file is unknown. In this case,
+           :exc:`SFTPPublishUnknown` is raised and no further action is
+           taken: the rename is not retried and neither the temporary
+           nor the target file is removed, since the target may have
+           already been replaced. Only when the server confirms the
+           rename does this method return successfully.
+
+           :param source:
+               An async byte stream to publish, providing a
+               ``read(size)`` coroutine
+           :param remotepath:
+               The path of the remote file to replace
+           :param size:
+               The exact number of bytes the stream is expected to
+               produce
+           :param sha256:
+               The expected SHA-256 digest of the stream contents, as
+               raw bytes or a hex string
+           :param block_size: (optional)
+               The block size to use for stream reads and file writes
+           :type source:
+               An object with an async ``read(size)`` method
+           :type remotepath:
+               :class:`PurePath <pathlib.PurePath>`, `str`, or `bytes`
+           :type size: `int`
+           :type sha256: `bytes` or `str`
+           :type block_size: `int`
+
+           :raises: | :exc:`ValueError` if the expected size or digest
+                      is invalid
+                    | :exc:`SFTPOpUnsupported` if the server doesn't
+                      support POSIX rename
+                    | :exc:`SFTPFailure` if the stream length or digest
+                      doesn't match the expected values
+                    | :exc:`SFTPPublishUnknown` if the connection is
+                      lost with the publish result unknown
+                    | :exc:`SFTPError` if the server returns an error
+
+        """
+
+        if not self._handler.supports_posix_rename:
+            raise SFTPOpUnsupported('POSIX rename not supported by server')
+
+        if size < 0:
+            raise ValueError('Publish size must be non-negative')
+
+        if block_size <= 0:
+            raise ValueError('Publish block size must be positive')
+
+        if isinstance(sha256, str):
+            expected_digest = bytes.fromhex(sha256)
+        else:
+            expected_digest = bytes(sha256)
+
+        if len(expected_digest) != hashlib.sha256().digest_size:
+            raise ValueError('Publish digest must be a SHA-256 digest')
+
+        target = self.compose_path(remotepath)
+        dirname = posixpath.dirname(target)
+
+        file: Optional[SFTPClientFile] = None
+        tmpname: Optional[bytes] = None
+
+        try:
+            for _ in range(_MAX_PUBLISH_OPEN_ATTEMPTS):
+                candidate = posixpath.join(dirname, _publish_temp_name())
+
+                try:
+                    file = await self.open(candidate, 'xb',
+                                           block_size=block_size,
+                                           max_requests=1)
+                except SFTPFileAlreadyExists:
+                    continue # Name collision -- pick a new name
+                except SFTPFailure:
+                    # Before SFTPv4, an exclusive create which fails due
+                    # to the file already existing is reported as a
+                    # generic failure, so treat that as a collision too.
+
+                    if self._handler.version >= 4:
+                        raise
+
+                    continue
+
+                tmpname = candidate
+                break
+            else:
+                raise SFTPFailure('Unable to create a unique temporary '
+                                  'file for publish')
+
+            assert file is not None and tmpname is not None
+
+            hasher = hashlib.sha256()
+            total = 0
+
+            while True:
+                block = await _read_publish_block(source, block_size)
+
+                if not block:
+                    break
+
+                total += len(block)
+
+                if total > size:
+                    raise SFTPFailure('Publish data exceeds expected '
+                                      f'length of {size} bytes')
+
+                hasher.update(block)
+                await file.write(block)
+
+            await file.close()
+            file = None
+
+            if total != size:
+                raise SFTPFailure(f'Publish length mismatch: expected '
+                                  f'{size} bytes, got {total}')
+
+            if hasher.digest() != expected_digest:
+                raise SFTPFailure('Publish digest mismatch')
+
+            try:
+                await self._handler.posix_rename(tmpname, target)
+            except (SFTPNoConnection, SFTPConnectionLost,
+                    DisconnectError, OSError) as exc:
+                # The rename may or may not have been processed, so the
+                # state of the target file is unknown. Don't retry the
+                # rename or remove either file.
+                tmpname = None
+
+                raise SFTPPublishUnknown('Publish status unknown for '
+                                         f'{target}: {exc}') from exc
+
+            tmpname = None
+        except BaseException as exc:
+            if tmpname is not None:
+                await self._cleanup_publish(file, tmpname, exc)
+
+            raise
 
     async def copy(self, srcpaths: _SFTPPaths,
                    dstpath: Optional[_SFTPPath] = None, *,

@@ -108,7 +108,7 @@ from .sftp import SFTPFileIsADirectory, SFTPByteRangeLockConflict
 from .sftp import SFTPByteRangeLockRefused, SFTPDeletePending
 from .sftp import SFTPFileCorrupt, SFTPOwnerInvalid, SFTPGroupInvalid
 from .sftp import SFTPNoMatchingByteRangeLock
-from .sftp import SFTPConnectionLost, SFTPOpUnsupported
+from .sftp import SFTPConnectionLost, SFTPOpUnsupported, SFTPPublishUnknown
 from .sftp import SFTPAttrs, SFTPVFSAttrs, SFTPName, SFTPLimits
 from .sftp import SEEK_SET, SEEK_CUR, SEEK_END
 
@@ -145,7 +145,8 @@ __all__ = [
     'SFTPName', 'SFTPNoConnection', 'SFTPNoMatchingByteRangeLock',
     'SFTPNoMedia', 'SFTPNoSpaceOnFilesystem', 'SFTPNoSuchFile',
     'SFTPNoSuchPath', 'SFTPNotADirectory', 'SFTPOpUnsupported',
-    'SFTPOwnerInvalid', 'SFTPPermissionDenied', 'SFTPQuotaExceeded',
+    'SFTPOwnerInvalid', 'SFTPPermissionDenied', 'SFTPPublishUnknown',
+    'SFTPQuotaExceeded',
     'SFTPServer', 'SFTPServerFactory', 'SFTPUnknownPrincipal', 'SFTPVFSAttrs',
     'SFTPWriteProtect', 'SSHAcceptHandler', 'SSHAcceptor', 'SSHAgentClient',
     'SSHAgentKeyPair', 'SSHAuthorizedKeys', 'SSHCertificate', 'SSHClient',
